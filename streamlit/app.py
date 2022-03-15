@@ -1,6 +1,5 @@
 import streamlit as st
 from predict_page import show_predict_page
-from explore_page import graphs
 from doc_page import doc
 
 
@@ -15,11 +14,9 @@ col1,col2 = st.sidebar.columns([1,8])
 col2.title("Menu")
 
 col1,col2 = st.sidebar.columns([2,8])
-choice = col2.radio("",['Detect','Explore','Brief'])
+choice = col2.radio("",['Detect','Brief'])
 
 if choice == 'Detect':
     show_predict_page()
-elif choice == 'Explore':
-    graphs()
 else:
     doc()
